@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>m5rcel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Marcel (m5rcel) is a full-stack and systems developer from Poland. meowcord, AXON, 3itter and around 140 other projects.">
+<meta property="og:title" content="m5rcel">
+<meta property="og:description" content="Full-stack and systems developer from Poland. Small batches, clean code, crispy edges.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/icons/bread.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/ChiKareGo2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/FindersKeepers.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/system7.css">
+<script type="module" src="assets/js/main.mjs"></script>
+</head>
+<body>
+
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+
+<nav class="menubar" aria-label="Menu bar">
+  <ul class="menus" role="menubar">
+    <li class="menu-root">
+      <button class="menu-title" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Bakery menu"><img src="assets/icons/bread.svg" width="16" height="16" alt=""></button>
+      <ul class="menu" role="menu" hidden>
+        <li><button role="menuitem" type="button" data-action="open" data-target="win-about">About This Marcel…</button></li>
+        <li role="separator"></li>
+        <li><button role="menuitem" type="button" data-action="open" data-target="win-blog"><img class="menu-icon" src="assets/icons/folder-16.svg" width="16" height="16" alt="">Blog</button></li>
+        <li><button role="menuitem" type="button" data-action="open" data-target="win-patterns"><img class="menu-icon" src="assets/icons/panel-16.svg" width="16" height="16" alt="">Desktop Patterns</button></li>
+        <li><button role="menuitem" type="button" data-action="open" data-target="win-domains"><img class="menu-icon" src="assets/icons/folder-16.svg" width="16" height="16" alt="">Domains</button></li>
+        <li><button role="menuitem" type="button" data-action="open" data-target="win-links"><img class="menu-icon" src="assets/icons/folder-16.svg" width="16" height="16" alt="">Links</button></li>
+        <li><button role="menuitem" type="button" data-action="open" data-target="win-projects"><img class="menu-icon" src="assets/icons/folder-16.svg" width="16" height="16" alt="">Projects</button></li>
+        <li><button role="menuitem" type="button" data-action="open" data-target="win-readme"><img class="menu-icon" src="assets/icons/document-16.svg" width="16" height="16" alt="">Read Me</button></li>
+      </ul>
+    </li>
+    <li class="menu-root">
+      <button class="menu-title" type="button" aria-haspopup="true" aria-expanded="false">File</button>
+      <ul class="menu" role="menu" hidden>
+        <li><button role="menuitem" type="button" data-action="open-selection" data-enable="selection">Open</button></li>
+        <li><button role="menuitem" type="button" data-action="close-window" data-enable="window">Close Window</button></li>
+        <li role="separator"></li>
+        <li><button role="menuitem" type="button" data-action="get-info" data-enable="project">Get Info</button></li>
+        <li role="separator"></li>
+        <li><button role="menuitem" type="button" aria-disabled="true">Page Setup…</button></li>
+        <li><button role="menuitem" type="button" aria-disabled="true">Print…</button></li>
+      </ul>
+    </li>
+    <li class="menu-root menu-edit">
+      <button class="menu-title" type="button" aria-haspopup="true" aria-expanded="false">Edit</button>
+      <ul class="menu" role="menu" hidden>
+        <li><button role="menuitem" type="button" aria-disabled="true">Undo</button></li>
+        <li role="separator"></li>
+        <li><button role="menuitem" type="button" aria-disabled="true">Cut</button></li>
+        <li><button role="menuitem" type="button" aria-disabled="true">Copy</button></li>
+        <li><button role="menuitem" type="button" aria-disabled="true">Paste</button></li>
+        <li><button role="menuitem" type="button" aria-disabled="true">Clear</button></li>
+        <li role="separator"></li>
+        <li><button role="menuitem" type="button" data-action="copy-email">Copy E-mail Address</button></li>
+      </ul>
+    </li>
+    <li class="menu-root">
+      <button class="menu-title" type="button" aria-haspopup="true" aria-expanded="false">View</button>
+      <ul class="menu" role="menu" hidden>
+        <li><button role="menuitemradio" type="button" data-action="sort" data-key="name" data-enable="list">by Name</button></li>
+        <li><button role="menuitemradio" type="button" data-action="sort" data-key="stars" data-enable="list">by Stars</button></li>
+        <li><button role="menuitemradio" type="button" data-action="sort" data-key="kind" data-enable="list">by Kind</button></li>
+        <li><button role="menuitemradio" type="button" data-action="sort" data-key="date" data-enable="list">by Date</button></li>
+      </ul>
+    </li>
+    <li class="menu-root">
+      <button class="menu-title" type="button" aria-haspopup="true" aria-expanded="false">Special</button>
+      <ul class="menu" role="menu" hidden>
+        <li><button role="menuitem" type="button" data-action="clean-up" data-enable="desktop">Clean Up Windows</button></li>
+        <li><button role="menuitem" type="button" data-action="empty-trash">Empty Trash…</button></li>
+        <li role="separator"></li>
+        <li><button role="menuitem" type="button" data-action="restart">Restart</button></li>
+        <li><button role="menuitem" type="button" data-action="shut-down">Shut Down</button></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="menus-right" role="menubar">
+    <li class="clock" aria-label="Local time"><time id="clock">&nbsp;</time></li>
+    <li class="menu-root">
+      <button class="menu-title" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Application menu"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""></button>
+      <ul class="menu" role="menu" hidden>
+        <li><button role="menuitem" type="button" aria-disabled="true">Hide Finder</button></li>
+        <li><button role="menuitem" type="button" data-action="hide-others" data-enable="window">Hide Others</button></li>
+        <li><button role="menuitem" type="button" data-action="show-all">Show All</button></li>
+        <li role="separator"></li>
+        <li><button role="menuitemradio" type="button" aria-checked="true"><img class="menu-icon" src="assets/icons/app-16.svg" width="16" height="16" alt="">Finder</button></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<main class="desktop" id="desktop">
+
+  <h1 class="visually-hidden">m5rcel, full-stack and systems developer from Poland</h1>
+
+  <ul class="desk-icons" aria-label="Desktop">
+    <li><button class="icon" type="button" data-opens="win-hd"><span class="glyph"><img src="assets/icons/disk.svg" width="32" height="32" alt=""></span><span class="label">m5rcel HD</span></button></li>
+    <li><button class="icon" type="button" data-opens="win-readme"><span class="glyph"><img src="assets/icons/readme.svg" width="32" height="32" alt=""></span><span class="label">Read Me</span></button></li>
+    <li><button class="icon" type="button" data-opens="win-projects"><span class="glyph"><img src="assets/icons/folder.svg" width="32" height="32" alt=""></span><span class="label">Projects</span></button></li>
+    <li><button class="icon" type="button" data-opens="win-blog"><span class="glyph"><img src="assets/icons/folder.svg" width="32" height="32" alt=""></span><span class="label">Blog</span></button></li>
+    <li><button class="icon" type="button" data-opens="win-links"><span class="glyph"><img src="assets/icons/folder.svg" width="32" height="32" alt=""></span><span class="label">Links</span></button></li>
+    <li><button class="icon" type="button" data-opens="win-domains"><span class="glyph"><img src="assets/icons/folder.svg" width="32" height="32" alt=""></span><span class="label">Domains</span></button></li>
+    <li class="trash-slot"><button class="icon" type="button" data-opens="win-trash"><span class="glyph"><img src="assets/icons/trash-full.svg" width="32" height="32" alt=""></span><span class="label">Trash</span></button></li>
+  </ul>
+
+  <div class="windows" id="windows">
+
+    <!-- Read Me ---------------------------------------------------------->
+    <section class="window has-scroll is-long" id="win-readme" data-default="open" aria-labelledby="t-readme">
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close Read Me"></button>
+        <h2 class="title" id="t-readme">Read Me</h2>
+        <button class="box zoom" type="button" aria-label="Zoom Read Me"></button>
+      </header>
+      <div class="window-body">
+        <article class="doc">
+          <h1>Hi, I'm Marcel.</h1>
+          <p>Online I go by <strong>m5rcel</strong>. I'm a full-stack and systems developer from Poland, and I like websites, APIs, Linux, self-hosting, Minecraft, Roblox and old internet pages.</p>
+          <p>I build things from scratch: chat platforms, Twitter recreations, a programming language, package managers, a couple of kernels and plenty of small tools. Most of it lives on GitHub as <a href="https://github.com/wypiek" target="_blank" rel="noopener">wypiek</a>, and some of it runs on my own servers.</p>
+          <p class="tip" id="warsaw-line" hidden>It's <time id="warsaw-time"></time> in Warsaw right now.</p>
+
+          <h2>Currently baking</h2>
+          <ul>
+            <li><strong>meowcord</strong>, a self-hosted Discord clone with message encryption and federation, together with tiago.</li>
+            <li><strong>AXON</strong>, a statically typed language that compiles to C11.</li>
+            <li><strong>m3</strong>, a Wayland compositor in Rust with a Material 3 Expressive look.</li>
+          </ul>
+
+          <h2>House recipe</h2>
+          <blockquote class="recipe">
+            <p>Start simple. Make it work. Keep it light. Give it character.</p>
+            <p>And if it breaks, call it an experimental batch.</p>
+          </blockquote>
+
+          <h2>In the pantry</h2>
+          <dl class="pairs">
+            <dt>Building with</dt><dd>Rust, Python, TypeScript, JavaScript, CSS, SQLite</dd>
+            <dt>Know well</dt><dd>HTML, Linux, Docker, Git</dd>
+            <dt>Also shipped</dt><dd>C, C#, Go, PHP, Swift, Kotlin</dd>
+            <dt>Daily driver</dt><dd>Linux, Arch-based</dd>
+          </dl>
+
+          <h2>Say hi</h2>
+          <p>E-mail <a href="#" data-mail="contact" data-domain="m5rcel.com">contact [at] m5rcel.com</a>, or find me on <a href="https://x.com/m5rceI" target="_blank" rel="noopener">X as @m5rceI</a> and <a href="https://discord.com/users/318746314991206400" target="_blank" rel="noopener">Discord as m5rcel</a>. My main home on the web is <a href="https://twitter.democrat/" target="_blank" rel="noopener">twitter.democrat</a>, where the blog lives too.</p>
+
+          <p class="tip"><span class="tip-pointer">Double-click icons to open them, and drag windows around by their title bars.</span><span class="tip-touch">Tap an icon to open its window.</span></p>
+        </article>
+      </div>
+      <span class="grow" aria-hidden="true"></span>
+    </section>
+
+    <!-- Projects --------------------------------------------------------->
+    <section class="window has-scroll" id="win-projects" data-default="open" aria-labelledby="t-projects">
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close Projects"></button>
+        <h2 class="title" id="t-projects">Projects</h2>
+        <button class="box zoom" type="button" aria-label="Zoom Projects"></button>
+      </header>
+      <div class="finder-info"><span>52 items</span><span>148 repos on GitHub</span><span>138 stars</span></div>
+      <div class="window-body">
+        <div class="list" data-sort="stars" role="tree" aria-label="Projects">
+          <div class="list-head">
+            <button type="button" data-sort="name">Name</button>
+            <button type="button" class="num" data-sort="stars">Stars</button>
+            <button type="button" data-sort="kind">Kind</button>
+            <button type="button" class="c-date" data-sort="date">Last Modified</button>
+          </div>
+
+          <div class="row folder" role="treeitem" aria-expanded="true">
+            <span class="c-name"><button class="twisty" type="button" aria-expanded="true" aria-label="Featured"></button><img src="assets/icons/folder-16.svg" width="16" height="16" alt=""><span class="label">Featured</span></span>
+            <span class="c-num">–</span><span>folder</span><span class="c-date">–</span>
+          </div>
+          <div class="group" role="group">
+            <a class="row item" role="treeitem" href="https://github.com/meowcorded/meowcord" target="_blank" rel="noopener" data-name="meowcord" data-stars="78" data-kind="TypeScript" data-date="2026-11-14" data-where="meowcorded/meowcord" data-desc="Self-hosted Discord clone with feature parity, message encryption and very simple federation between instances. It serves a patched Discord web client, so people get the interface they know without a Discord account. TypeScript on Bun, AGPL-3.0, 34 forks. Built with tiago.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">meowcord</span></span><span class="c-num">78</span><span>TypeScript</span><span class="c-date">Nov 14, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/discord-oss" target="_blank" rel="noopener" data-name="discord-oss" data-stars="11" data-kind="TypeScript" data-date="2026-11-17" data-where="wypiek/discord-oss" data-desc="Open source recreation of Discord with Equicord built in.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">discord-oss</span></span><span class="c-num">11</span><span>TypeScript</span><span class="c-date">Nov 17, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/3itter" target="_blank" rel="noopener" data-name="3itter" data-stars="10" data-kind="JavaScript" data-date="2026-11-14" data-where="wypiek/3itter" data-desc="A Twitter clone styled with Material 3 Expressive.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">3itter</span></span><span class="c-num">10</span><span>JavaScript</span><span class="c-date">Nov 14, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/theaxonproject/language" target="_blank" rel="noopener" data-name="AXON" data-stars="0" data-kind="Language" data-date="2026-10-28" data-where="theaxonproject/language" data-desc="A statically typed, compiled, general-purpose language. The toolchain lowers AXON to C11 and builds native binaries, and ships an interpreter, REPL, formatter, linter, build system and language server. Generics, traits, pattern matching, Result and Option, pipelines. Version 1.2.0, MIT.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">AXON</span></span><span class="c-num">0</span><span>Language</span><span class="c-date">Oct 28, 2026</span>
+            </a>
+          </div>
+
+          <div class="row folder" role="treeitem" aria-expanded="true">
+            <span class="c-name"><button class="twisty" type="button" aria-expanded="true" aria-label="Systems &amp; languages"></button><img src="assets/icons/folder-16.svg" width="16" height="16" alt=""><span class="label">Systems &amp; languages</span></span>
+            <span class="c-num">–</span><span>folder</span><span class="c-date">–</span>
+          </div>
+          <div class="group" role="group">
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/m3" target="_blank" rel="noopener" data-name="m3" data-stars="0" data-kind="Rust" data-date="2026-11-11" data-where="wypiek/m3" data-desc="A custom Wayland compositor with a Material 3 Expressive theme.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">m3</span></span><span class="c-num">0</span><span>Rust</span><span class="c-date">Nov 11, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/bwfall" target="_blank" rel="noopener" data-name="bwfall" data-stars="6" data-kind="C" data-date="2026-03-02" data-where="wypiek/bwfall" data-desc="Binary waterfall visualizer for Linux, with Arch and Alpine support.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">bwfall</span></span><span class="c-num">6</span><span>C</span><span class="c-date">Mar 2, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/WinKERNEL" target="_blank" rel="noopener" data-name="WinKERNEL" data-stars="1" data-kind="C" data-date="2026-06-20" data-where="wypiek/WinKERNEL" data-desc="A from-scratch kernel modelled on Windows 11.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">WinKERNEL</span></span><span class="c-num">1</span><span>C</span><span class="c-date">Jun 20, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/PhoenixOS" target="_blank" rel="noopener" data-name="PhoenixOS" data-stars="1" data-kind="C" data-date="2026-03-18" data-where="wypiek/PhoenixOS" data-desc="An operating system that looks like Windows 1.0 and 3.0 but feels like Linux.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">PhoenixOS</span></span><span class="c-num">1</span><span>C</span><span class="c-date">Mar 18, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/Fit" target="_blank" rel="noopener" data-name="Fit" data-stars="1" data-kind="C" data-date="2026-03-15" data-where="wypiek/Fit" data-desc="Git's object model, rebuilt as a backup and storage engine.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">Fit</span></span><span class="c-num">1</span><span>C</span><span class="c-date">Mar 15, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/vorthex" target="_blank" rel="noopener" data-name="vorthex" data-stars="0" data-kind="Python" data-date="2026-04-09" data-where="wypiek/vorthex" data-desc="An esoteric language with no keywords and no variables.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">vorthex</span></span><span class="c-num">0</span><span>Python</span><span class="c-date">Apr 9, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/jfl-distribution" target="_blank" rel="noopener" data-name="jfl-distribution" data-stars="0" data-kind="Shell" data-date="2025-11-27" data-where="wypiek/jfl-distribution" data-desc="An Arch-based Linux distribution.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">jfl-distribution</span></span><span class="c-num">0</span><span>Shell</span><span class="c-date">Nov 27, 2025</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/m5rcode" target="_blank" rel="noopener" data-name="m5rcode" data-stars="0" data-kind="Python" data-date="2025-10-17" data-where="wypiek/m5rcode" data-desc="My first programming language, with its own shell and interpreter. Packaged on the AUR, with an Ubuntu port and an EFI build that boots it as an OS.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">m5rcode</span></span><span class="c-num">0</span><span>Python</span><span class="c-date">Oct 17, 2025</span>
+            </a>
+          </div>
+
+          <div class="row folder" role="treeitem" aria-expanded="false">
+            <span class="c-name"><button class="twisty" type="button" aria-expanded="false" aria-label="Social &amp; chat"></button><img src="assets/icons/folder-16.svg" width="16" height="16" alt=""><span class="label">Social &amp; chat</span></span>
+            <span class="c-num">–</span><span>folder</span><span class="c-date">–</span>
+          </div>
+          <div class="group" role="group">
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/Chirp" target="_blank" rel="noopener" data-name="Chirp" data-stars="1" data-kind="Python" data-date="2026-07-18" data-where="wypiek/Chirp" data-desc="A Twitter-like social platform styled like an Android app.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">Chirp</span></span><span class="c-num">1</span><span>Python</span><span class="c-date">Jul 18, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/Linkora" target="_blank" rel="noopener" data-name="Linkora" data-stars="1" data-kind="C#" data-date="2026-10-28" data-where="wypiek/Linkora" data-desc="Windows Live Messenger, ported to Linux and macOS.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">Linkora</span></span><span class="c-num">1</span><span>C#</span><span class="c-date">Oct 28, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/twiq" target="_blank" rel="noopener" data-name="twiq" data-stars="0" data-kind="JavaScript" data-date="2026-09-13" data-where="wypiek/twiq" data-desc="A recreation of Twitter as it was in 2014, with a few ideas of its own.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">twiq</span></span><span class="c-num">0</span><span>JavaScript</span><span class="c-date">Sep 13, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/twitkey" target="_blank" rel="noopener" data-name="twitkey" data-stars="0" data-kind="PHP" data-date="2026-05-26" data-where="wypiek/twitkey" data-desc="A recreation of 2009-era Twitter.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">twitkey</span></span><span class="c-num">0</span><span>PHP</span><span class="c-date">May 26, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/horizon" target="_blank" rel="noopener" data-name="horizon" data-stars="0" data-kind="TypeScript" data-date="2026-08-13" data-where="wypiek/horizon" data-desc="A clone of X.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">horizon</span></span><span class="c-num">0</span><span>TypeScript</span><span class="c-date">Aug 13, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/wistlet" target="_blank" rel="noopener" data-name="wistlet" data-stars="0" data-kind="C#" data-date="2026-10-27" data-where="wypiek/wistlet" data-desc="An open source recreation of cohost!">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">wistlet</span></span><span class="c-num">0</span><span>C#</span><span class="c-date">Oct 27, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/vxfedi" target="_blank" rel="noopener" data-name="vxfedi" data-stars="0" data-kind="JavaScript" data-date="2026-06-21" data-where="wypiek/vxfedi" data-desc="vxtwitter-style link embeds for the fediverse.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">vxfedi</span></span><span class="c-num">0</span><span>JavaScript</span><span class="c-date">Jun 21, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/nexus" target="_blank" rel="noopener" data-name="nexus" data-stars="0" data-kind="TypeScript" data-date="2026-05-25" data-where="wypiek/nexus" data-desc="A self-hosted, open source communication platform.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">nexus</span></span><span class="c-num">0</span><span>TypeScript</span><span class="c-date">May 25, 2026</span>
+            </a>
+          </div>
+
+          <div class="row folder" role="treeitem" aria-expanded="false">
+            <span class="c-name"><button class="twisty" type="button" aria-expanded="false" aria-label="Web"></button><img src="assets/icons/folder-16.svg" width="16" height="16" alt=""><span class="label">Web</span></span>
+            <span class="c-num">–</span><span>folder</span><span class="c-date">–</span>
+          </div>
+          <div class="group" role="group">
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/keyhaven" target="_blank" rel="noopener" data-name="keyhaven" data-stars="1" data-kind="JavaScript" data-date="2026-11-04" data-where="wypiek/keyhaven" data-desc="A password manager with an optional self-hosted sync server.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">keyhaven</span></span><span class="c-num">1</span><span>JavaScript</span><span class="c-date">Nov 4, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/mafh.net" target="_blank" rel="noopener" data-name="mafh.net" data-stars="1" data-kind="C#" data-date="2026-07-02" data-where="wypiek/mafh.net" data-desc="A file hoster written in .NET.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">mafh.net</span></span><span class="c-num">1</span><span>C#</span><span class="c-date">Jul 2, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/m3blog" target="_blank" rel="noopener" data-name="m3blog" data-stars="0" data-kind="Web app" data-date="2026-11-05" data-where="wypiek/m3blog" data-desc="An easy-to-maintain blog engine with a Material 3 interface.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">m3blog</span></span><span class="c-num">0</span><span>Web app</span><span class="c-date">Nov 5, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/7blog" target="_blank" rel="noopener" data-name="7blog" data-stars="0" data-kind="C#" data-date="2026-10-25" data-where="wypiek/7blog" data-desc="A blog styled after Windows 7 with 7.css.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">7blog</span></span><span class="c-num">0</span><span>C#</span><span class="c-date">Oct 25, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/discord.lifestyle" target="_blank" rel="noopener" data-name="discord.lifestyle" data-stars="0" data-kind="TypeScript" data-date="2026-10-22" data-where="wypiek/discord.lifestyle" data-desc="A clicker game. It also lives at discord.lifestyle.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">discord.lifestyle</span></span><span class="c-num">0</span><span>TypeScript</span><span class="c-date">Oct 22, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/opentube" target="_blank" rel="noopener" data-name="opentube" data-stars="0" data-kind="TypeScript" data-date="2026-06-07" data-where="wypiek/opentube" data-desc="An open source YouTube clone that looks like it's 2006.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">opentube</span></span><span class="c-num">0</span><span>TypeScript</span><span class="c-date">Jun 7, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/rbxl.eu" target="_blank" rel="noopener" data-name="rbxl.eu" data-stars="0" data-kind="JavaScript" data-date="2026-03-10" data-where="wypiek/rbxl.eu" data-desc="A bio hosting platform styled with Material You.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">rbxl.eu</span></span><span class="c-num">0</span><span>JavaScript</span><span class="c-date">Mar 10, 2026</span>
+            </a>
+          </div>
+
+          <div class="row folder" role="treeitem" aria-expanded="false">
+            <span class="c-name"><button class="twisty" type="button" aria-expanded="false" aria-label="Tools &amp; apps"></button><img src="assets/icons/folder-16.svg" width="16" height="16" alt=""><span class="label">Tools &amp; apps</span></span>
+            <span class="c-num">–</span><span>folder</span><span class="c-date">–</span>
+          </div>
+          <div class="group" role="group">
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/wingit" target="_blank" rel="noopener" data-name="wingit" data-stars="2" data-kind="PowerShell" data-date="2026-07-18" data-where="wypiek/wingit" data-desc="A package manager for Windows that installs straight from GitHub releases.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">wingit</span></span><span class="c-num">2</span><span>PowerShell</span><span class="c-date">Jul 18, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/TermiTune" target="_blank" rel="noopener" data-name="TermiTune" data-stars="2" data-kind="Rust" data-date="2026-02-27" data-where="wypiek/TermiTune" data-desc="A terminal music player for your local library.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">TermiTune</span></span><span class="c-num">2</span><span>Rust</span><span class="c-date">Feb 27, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/mpct" target="_blank" rel="noopener" data-name="mpct" data-stars="1" data-kind="Rust" data-date="2026-07-17" data-where="wypiek/mpct" data-desc="One cross-platform binary for hashing, encoding, config formats, TOTP, QR codes and more.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">mpct</span></span><span class="c-num">1</span><span>Rust</span><span class="c-date">Jul 17, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/spatial" target="_blank" rel="noopener" data-name="spatial" data-stars="1" data-kind="Swift" data-date="2026-04-30" data-where="wypiek/spatial" data-desc="A filesystem visualizer that draws your folders as a node graph.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">spatial</span></span><span class="c-num">1</span><span>Swift</span><span class="c-date">Apr 30, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/rewind" target="_blank" rel="noopener" data-name="rewind" data-stars="0" data-kind="Rust" data-date="2026-10-30" data-where="wypiek/rewind" data-desc="An undo button for a whole project folder.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">rewind</span></span><span class="c-num">0</span><span>Rust</span><span class="c-date">Oct 30, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/brewski" target="_blank" rel="noopener" data-name="brewski" data-stars="0" data-kind="Rust" data-date="2026-05-11" data-where="wypiek/brewski" data-desc="A keyboard-driven terminal UI for Homebrew on macOS.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">brewski</span></span><span class="c-num">0</span><span>Rust</span><span class="c-date">May 11, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/7get" target="_blank" rel="noopener" data-name="7get" data-stars="0" data-kind="C++" data-date="2026-10-28" data-where="wypiek/7get" data-desc="A native package manager for Windows 7.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">7get</span></span><span class="c-num">0</span><span>C++</span><span class="c-date">Oct 28, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/7monitor" target="_blank" rel="noopener" data-name="7monitor" data-stars="0" data-kind="C++" data-date="2026-10-28" data-where="wypiek/7monitor" data-desc="A native system monitor for Windows 7.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">7monitor</span></span><span class="c-num">0</span><span>C++</span><span class="c-date">Oct 28, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/loop" target="_blank" rel="noopener" data-name="loop" data-stars="0" data-kind="Swift" data-date="2026-06-21" data-where="wypiek/loop" data-desc="A native macOS music player with Discord Rich Presence.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">loop</span></span><span class="c-num">0</span><span>Swift</span><span class="c-date">Jun 21, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/AURA" target="_blank" rel="noopener" data-name="AURA" data-stars="0" data-kind="Kotlin" data-date="2026-05-20" data-where="wypiek/AURA" data-desc="An Android home dashboard in Material You.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">AURA</span></span><span class="c-num">0</span><span>Kotlin</span><span class="c-date">May 20, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/mspace" target="_blank" rel="noopener" data-name="mspace" data-stars="0" data-kind="C++" data-date="2026-01-01" data-where="wypiek/mspace" data-desc="A solar system simulator for Arch-based Linux.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">mspace</span></span><span class="c-num">0</span><span>C++</span><span class="c-date">Jan 1, 2026</span>
+            </a>
+          </div>
+
+          <div class="row folder" role="treeitem" aria-expanded="false">
+            <span class="c-name"><button class="twisty" type="button" aria-expanded="false" aria-label="Bots"></button><img src="assets/icons/folder-16.svg" width="16" height="16" alt=""><span class="label">Bots</span></span>
+            <span class="c-num">–</span><span>folder</span><span class="c-date">–</span>
+          </div>
+          <div class="group" role="group">
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/phpelefant" target="_blank" rel="noopener" data-name="phpelefant" data-stars="1" data-kind="Python" data-date="2026-05-21" data-where="wypiek/phpelefant" data-desc="A Telegram bot starring the PHP elephant.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">phpelefant</span></span><span class="c-num">1</span><span>Python</span><span class="c-date">May 21, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/nightbite" target="_blank" rel="noopener" data-name="nightbite" data-stars="0" data-kind="JavaScript" data-date="2026-07-03" data-where="wypiek/nightbite" data-desc="A Discord moderation bot.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">nightbite</span></span><span class="c-num">0</span><span>JavaScript</span><span class="c-date">Jul 3, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/anthropicutility" target="_blank" rel="noopener" data-name="anthropicutility" data-stars="0" data-kind="Go" data-date="2026-08-09" data-where="wypiek/anthropicutility" data-desc="A Discord bot that posts Anthropic news from an RSS feed.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">anthropicutility</span></span><span class="c-num">0</span><span>Go</span><span class="c-date">Aug 9, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/rsscord" target="_blank" rel="noopener" data-name="rsscord" data-stars="0" data-kind="Go" data-date="2026-08-10" data-where="wypiek/rsscord" data-desc="A minimal Discord bot that posts RSS news.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">rsscord</span></span><span class="c-num">0</span><span>Go</span><span class="c-date">Aug 10, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/bloxscouts" target="_blank" rel="noopener" data-name="bloxscouts" data-stars="0" data-kind="Go" data-date="2026-08-14" data-where="wypiek/bloxscouts" data-desc="A Discord bot that sends games to studio servers.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">bloxscouts</span></span><span class="c-num">0</span><span>Go</span><span class="c-date">Aug 14, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/dockerize-discord" target="_blank" rel="noopener" data-name="dockerize-discord" data-stars="0" data-kind="Python" data-date="2026-06-17" data-where="wypiek/dockerize-discord" data-desc="A Discord bot that gives each server its own container-like environment.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">dockerize-discord</span></span><span class="c-num">0</span><span>Python</span><span class="c-date">Jun 17, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/fmcord" target="_blank" rel="noopener" data-name="fmcord" data-stars="0" data-kind="TypeScript" data-date="2026-06-11" data-where="wypiek/fmcord" data-desc="A lightweight Discord music bot.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">fmcord</span></span><span class="c-num">0</span><span>TypeScript</span><span class="c-date">Jun 11, 2026</span>
+            </a>
+            <a class="row item" role="treeitem" href="https://github.com/wypiek/Pawsino" target="_blank" rel="noopener" data-name="Pawsino" data-stars="0" data-kind="Python" data-date="2026-03-14" data-where="wypiek/Pawsino" data-desc="An open source, cat-themed casino bot for Discord.">
+              <span class="c-name"><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span class="label">Pawsino</span></span><span class="c-num">0</span><span>Python</span><span class="c-date">Mar 14, 2026</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <span class="grow" aria-hidden="true"></span>
+    </section>
+
+    <!-- About This Marcel ------------------------------------------------>
+    <section class="window" id="win-about" data-default="open" aria-labelledby="t-about">
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close About This Marcel"></button>
+        <h2 class="title" id="t-about">About This Marcel</h2>
+      </header>
+      <div class="window-body">
+        <div class="about">
+          <div class="about-top">
+            <div class="about-who"><img src="assets/icons/bread-32.svg" width="32" height="32" alt=""><span>m5rcel</span></div>
+            <div class="about-sys">Developer Software 7.0<br>Warsaw, Poland</div>
+          </div>
+          <div class="about-mem">
+            <span>Repositories: <b>148</b></span><span>Stars earned: <b>138</b></span>
+            <span>Followers: <b>46</b></span><span>Organizations: <b>5</b></span>
+          </div>
+          <ul class="about-apps" aria-label="Most starred projects">
+            <li><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span>meowcord</span><span class="n">78 stars</span><span class="meter"><span style="width: 100%"></span></span></li>
+            <li><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span>discord-oss</span><span class="n">11 stars</span><span class="meter"><span style="width: 14.1%"></span></span></li>
+            <li><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span>3itter</span><span class="n">10 stars</span><span class="meter"><span style="width: 12.8%"></span></span></li>
+            <li><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span>bwfall</span><span class="n">6 stars</span><span class="meter"><span style="width: 7.7%"></span></span></li>
+            <li><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span>wingit</span><span class="n">2 stars</span><span class="meter"><span style="width: 2.6%"></span></span></li>
+            <li><img src="assets/icons/app-16.svg" width="16" height="16" alt=""><span>TermiTune</span><span class="n">2 stars</span><span class="meter"><span style="width: 2.6%"></span></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- m5rcel HD -------------------------------------------------------->
+    <section class="window has-scroll" id="win-hd" aria-labelledby="t-hd">
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close m5rcel HD"></button>
+        <h2 class="title" id="t-hd">m5rcel HD</h2>
+        <button class="box zoom" type="button" aria-label="Zoom m5rcel HD"></button>
+      </header>
+      <div class="finder-info"><span>7 items</span><span>148 repos on disk</span><span>plenty available</span></div>
+      <div class="window-body">
+        <ul class="icon-view">
+          <li><button class="icon" type="button" data-opens="win-readme"><span class="glyph"><img src="assets/icons/readme.svg" width="32" height="32" alt=""></span><span class="label">Read Me</span></button></li>
+          <li><button class="icon" type="button" data-opens="win-projects"><span class="glyph"><img src="assets/icons/folder.svg" width="32" height="32" alt=""></span><span class="label">Projects</span></button></li>
+          <li><button class="icon" type="button" data-opens="win-blog"><span class="glyph"><img src="assets/icons/folder.svg" width="32" height="32" alt=""></span><span class="label">Blog</span></button></li>
+          <li><button class="icon" type="button" data-opens="win-links"><span class="glyph"><img src="assets/icons/folder.svg" width="32" height="32" alt=""></span><span class="label">Links</span></button></li>
+          <li><button class="icon" type="button" data-opens="win-domains"><span class="glyph"><img src="assets/icons/folder.svg" width="32" height="32" alt=""></span><span class="label">Domains</span></button></li>
+          <li><button class="icon" type="button" data-opens="win-about"><span class="glyph"><img src="assets/icons/app.svg" width="32" height="32" alt=""></span><span class="label">About This Marcel</span></button></li>
+          <li><button class="icon" type="button" data-opens="win-patterns"><span class="glyph"><img src="assets/icons/panel.svg" width="32" height="32" alt=""></span><span class="label">Desktop Patterns</span></button></li>
+        </ul>
+      </div>
+      <span class="grow" aria-hidden="true"></span>
+    </section>
+
+    <!-- Blog ------------------------------------------------------------->
+    <section class="window has-scroll" id="win-blog" aria-labelledby="t-blog">
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close Blog"></button>
+        <h2 class="title" id="t-blog">Blog</h2>
+        <button class="box zoom" type="button" aria-label="Zoom Blog"></button>
+      </header>
+      <div class="finder-info"><span>4 items</span><span>handwritten PHP</span><span>twitter.democrat/blog</span></div>
+      <div class="window-body">
+        <div class="list is-narrow" data-sort="date" aria-label="Blog posts">
+          <div class="list-head">
+            <button type="button" data-sort="name">Name</button>
+            <button type="button" data-sort="kind">Kind</button>
+            <button type="button" data-sort="date">Date</button>
+          </div>
+          <a class="row item" href="https://twitter.democrat/blog/post/fuck-windows" target="_blank" rel="noopener" data-name="FUCK WINDOWS!" data-kind="rant" data-date="2026-11-15">
+            <span class="c-name"><img src="assets/icons/document-16.svg" width="16" height="16" alt=""><span class="label">FUCK WINDOWS!</span></span><span>rant</span><span>Nov 15, 2026</span>
+          </a>
+          <a class="row item" href="https://twitter.democrat/blog/post/i-want-to-draw-a-cat-for-you-is-probably-one-of-the-funniest-companies-i-ve-ever-seen" target="_blank" rel="noopener" data-name="i want to draw a cat for you" data-kind="story" data-date="2026-11-05">
+            <span class="c-name"><img src="assets/icons/document-16.svg" width="16" height="16" alt=""><span class="label">"i want to draw a cat for you" is probably one of the funniest companies i've ever seen</span></span><span>story</span><span>Nov 5, 2026</span>
+          </a>
+          <a class="row item" href="https://twitter.democrat/blog/post/my-opinion-on-pond-linux" target="_blank" rel="noopener" data-name="my opinion on Pond Linux" data-kind="review" data-date="2026-11-04">
+            <span class="c-name"><img src="assets/icons/document-16.svg" width="16" height="16" alt=""><span class="label">my opinion on Pond Linux</span></span><span>review</span><span>Nov 4, 2026</span>
+          </a>
+          <a class="row item" href="https://twitter.democrat/blog/post/hello-world" target="_blank" rel="noopener" data-name="hello, world" data-kind="first post" data-date="2026-11-03">
+            <span class="c-name"><img src="assets/icons/document-16.svg" width="16" height="16" alt=""><span class="label">hello, world</span></span><span>first post</span><span>Nov 3, 2026</span>
+          </a>
+        </div>
+      </div>
+      <span class="grow" aria-hidden="true"></span>
+    </section>
+
+    <!-- Links ------------------------------------------------------------>
+    <section class="window has-scroll" id="win-links" aria-labelledby="t-links">
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close Links"></button>
+        <h2 class="title" id="t-links">Links</h2>
+        <button class="box zoom" type="button" aria-label="Zoom Links"></button>
+      </header>
+      <div class="finder-info"><span>8 items</span><span>all aliases</span><span>&nbsp;</span></div>
+      <div class="window-body">
+        <ul class="icon-view">
+          <li><a class="icon is-alias" href="https://github.com/wypiek" target="_blank" rel="noopener"><span class="glyph"><img src="assets/icons/globe.svg" width="32" height="32" alt=""></span><span class="label">GitHub</span></a></li>
+          <li><a class="icon is-alias" href="https://x.com/m5rceI" target="_blank" rel="noopener"><span class="glyph"><img src="assets/icons/globe.svg" width="32" height="32" alt=""></span><span class="label">X @m5rceI</span></a></li>
+          <li><a class="icon is-alias" href="https://discord.com/users/318746314991206400" target="_blank" rel="noopener"><span class="glyph"><img src="assets/icons/globe.svg" width="32" height="32" alt=""></span><span class="label">Discord</span></a></li>
+          <li><a class="icon is-alias" href="https://steamcommunity.com/id/m5rcel" target="_blank" rel="noopener"><span class="glyph"><img src="assets/icons/globe.svg" width="32" height="32" alt=""></span><span class="label">Steam</span></a></li>
+          <li><a class="icon is-alias" href="#" data-mail="contact" data-domain="m5rcel.com"><span class="glyph"><img src="assets/icons/mail.svg" width="32" height="32" alt=""></span><span class="label">E-mail</span></a></li>
+          <li><a class="icon is-alias" href="https://twitter.democrat/blog/rss.xml" target="_blank" rel="noopener"><span class="glyph"><img src="assets/icons/document.svg" width="32" height="32" alt=""></span><span class="label">Blog RSS</span></a></li>
+          <li><a class="icon is-alias" href="https://m5rcel.neocities.org/" target="_blank" rel="noopener"><span class="glyph"><img src="assets/icons/globe.svg" width="32" height="32" alt=""></span><span class="label">Neocities</span></a></li>
+          <li><a class="icon is-alias" href="https://sire.lol/m5rcel" target="_blank" rel="noopener"><span class="glyph"><img src="assets/icons/globe.svg" width="32" height="32" alt=""></span><span class="label">sire.lol</span></a></li>
+        </ul>
+      </div>
+      <span class="grow" aria-hidden="true"></span>
+    </section>
+
+    <!-- Domains ---------------------------------------------------------->
+    <section class="window has-scroll" id="win-domains" aria-labelledby="t-domains">
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close Domains"></button>
+        <h2 class="title" id="t-domains">Domains</h2>
+        <button class="box zoom" type="button" aria-label="Zoom Domains"></button>
+      </header>
+      <div class="finder-info"><span>7 items</span><span>&nbsp;</span><span>home is twitter.democrat</span></div>
+      <div class="window-body">
+        <div class="list is-narrow is-two" data-sort="none" aria-label="Domains">
+          <div class="list-head">
+            <button type="button" data-sort="name">Name</button>
+            <button type="button" data-sort="kind">Kind</button>
+          </div>
+          <a class="row item" href="https://twitter.democrat/" target="_blank" rel="noopener" data-name="twitter.democrat" data-kind="1 main home"><span class="c-name"><img src="assets/icons/globe-16.svg" width="16" height="16" alt=""><span class="label">twitter.democrat</span></span><span>main home</span></a>
+          <a class="row item" href="https://m5rcel.com/" target="_blank" rel="noopener" data-name="m5rcel.com" data-kind="2 homepage"><span class="c-name"><img src="assets/icons/globe-16.svg" width="16" height="16" alt=""><span class="label">m5rcel.com</span></span><span>homepage</span></a>
+          <a class="row item" href="https://m5rcel.neocities.org/" target="_blank" rel="noopener" data-name="m5rcel.neocities.org" data-kind="3 neocities"><span class="c-name"><img src="assets/icons/globe-16.svg" width="16" height="16" alt=""><span class="label">m5rcel.neocities.org</span></span><span>shrine</span></a>
+          <a class="row item" href="https://m5rcel.nekoweb.org/" target="_blank" rel="noopener" data-name="m5rcel.nekoweb.org" data-kind="4 mirror"><span class="c-name"><img src="assets/icons/globe-16.svg" width="16" height="16" alt=""><span class="label">m5rcel.nekoweb.org</span></span><span>other home</span></a>
+          <a class="row item" href="https://m5rcel.みんな/" target="_blank" rel="noopener" data-name="m5rcel.みんな" data-kind="4 mirror"><span class="c-name"><img src="assets/icons/globe-16.svg" width="16" height="16" alt=""><span class="label">m5rcel.みんな</span></span><span>other home</span></a>
+          <a class="row item" href="https://discord.lifestyle/" target="_blank" rel="noopener" data-name="discord.lifestyle" data-kind="5 game"><span class="c-name"><img src="assets/icons/globe-16.svg" width="16" height="16" alt=""><span class="label">discord.lifestyle</span></span><span>clicker game</span></a>
+          <a class="row item" href="https://noli.click/" target="_blank" rel="noopener" data-name="noli.click" data-kind="6 domain"><span class="c-name"><img src="assets/icons/globe-16.svg" width="16" height="16" alt=""><span class="label">noli.click</span></span><span>for Noli</span></a>
+        </div>
+      </div>
+      <span class="grow" aria-hidden="true"></span>
+    </section>
+
+    <!-- Trash ------------------------------------------------------------>
+    <section class="window has-scroll" id="win-trash" aria-labelledby="t-trash">
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close Trash"></button>
+        <h2 class="title" id="t-trash">Trash</h2>
+        <button class="box zoom" type="button" aria-label="Zoom Trash"></button>
+      </header>
+      <div class="finder-info"><span>1 item</span><span>&nbsp;</span><span>20 GB in Trash</span></div>
+      <div class="window-body">
+        <ul class="icon-view">
+          <li><a class="icon" href="https://twitter.democrat/blog/post/fuck-windows" target="_blank" rel="noopener"><span class="glyph"><img src="assets/icons/app.svg" width="32" height="32" alt=""></span><span class="label">Windows 11</span></a></li>
+        </ul>
+      </div>
+      <span class="grow" aria-hidden="true"></span>
+    </section>
+
+    <!-- Get Info (filled in by finder.mjs) ------------------------------->
+    <section class="window" id="win-info" aria-labelledby="t-info" hidden>
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close Info"></button>
+        <h2 class="title" id="t-info">Info</h2>
+      </header>
+      <div class="window-body">
+        <div class="info">
+          <div class="info-head"><img src="assets/icons/app.svg" width="32" height="32" alt=""><span class="name" data-field="name"></span></div>
+          <dl class="pairs">
+            <dt>Kind:</dt><dd data-field="kind"></dd>
+            <dt>Stars:</dt><dd data-field="stars"></dd>
+            <dt>Where:</dt><dd data-field="where"></dd>
+            <dt>Modified:</dt><dd data-field="date"></dd>
+          </dl>
+          <div>
+            <div class="pairs"><span style="font-family: var(--font-chrome)">Comments:</span></div>
+            <div class="info-comment" data-field="desc"></div>
+          </div>
+          <div class="info-actions"><a class="btn default" data-field="link" href="#" target="_blank" rel="noopener">Open on GitHub</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Desktop Patterns ------------------------------------------------->
+    <section class="window" id="win-patterns" aria-labelledby="t-patterns" hidden>
+      <header class="titlebar">
+        <button class="box close" type="button" aria-label="Close Desktop Patterns"></button>
+        <h2 class="title" id="t-patterns">Desktop Patterns</h2>
+      </header>
+      <div class="window-body">
+        <div class="patterns">
+          <div class="swatch" id="pattern-swatch"></div>
+          <div class="patterns-controls">
+            <div class="stepper">
+              <button class="arrow-btn prev" type="button" id="pattern-prev" aria-label="Previous pattern"></button>
+              <output id="pattern-name" aria-live="polite">Auto</output>
+              <button class="arrow-btn next" type="button" id="pattern-next" aria-label="Next pattern"></button>
+            </div>
+            <button class="btn default" type="button" id="pattern-set">Set Desktop</button>
+          </div>
+        </div>
+        <p class="tip" style="margin: 0; padding: 0 14px 12px">Auto follows your light or dark setting.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<noscript>
+  <style>.tip-pointer, .tip-touch, #win-info, #win-patterns { display: none; }</style>
+</noscript>
+
+</body>
+</html>
