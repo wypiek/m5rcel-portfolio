@@ -477,6 +477,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .doc { padding: 14px 18px 20px; max-width: 62ch; }
 .doc > * + * { margin-top: 12px; }
 .doc h1 { margin: 0; font: 400 32px/34px var(--font-chrome); }
+.doc-head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 16px; }
+.pfp {
+  flex: none;
+  width: 112px;
+  height: 112px;
+  padding: 2px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 1px 1px 0 var(--ink);
+  image-rendering: auto;
+}
 .doc h2 { margin: 18px 0 0; font: 400 16px/20px var(--font-chrome); }
 .doc p, .doc ul, .doc dl { margin-bottom: 0; }
 .doc ul { padding-left: 18px; }

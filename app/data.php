@@ -14,6 +14,8 @@ return [
         'email_domain' => 'm5rcel.com',
         'x' => 'm5rceI',
         'discord_id' => '318746314991206400',
+        'discord' => 'm5rcel.com',
+        'pfp' => 'assets/img/pfp-256.jpg',
         'home' => 'twitter.democrat',
         'organizations' => 5,
         // Used until GitHub has been reached once.
