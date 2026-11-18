@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"   # put your reverse proxy in front; use "80:80" to expose directly
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+    volumes:
+      - cache:/var/www/m5rcel/cache
+
+volumes:
+  cache:

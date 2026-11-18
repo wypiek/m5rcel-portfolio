@@ -1,3 +1,9 @@
+<?php
+declare(strict_types=1);
+
+require dirname(__DIR__) . '/app/bootstrap.php';
+send_headers(404);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,7 +20,7 @@
     <img src="/assets/icons/bomb.svg" width="32" height="32" alt="">
     <div class="dialog-text">
       <p id="err">Sorry, a system error occurred.</p>
-      <p>"page not found"<br>ID = 404</p>
+      <p>"<?= e(rawurldecode(strtok($_SERVER['REQUEST_URI'] ?? '/', '?') ?: '/')) ?>" not found<br>ID = 404</p>
     </div>
     <div class="dialog-actions">
       <a class="btn default" href="/">Restart</a>

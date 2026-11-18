@@ -1,6 +1,6 @@
 // Finder list views: disclosure triangles, sorting by column, and Get Info.
 
-import * as wm from "./windows.mjs";
+import * as wm from "./windows.js";
 
 const collator = new Intl.Collator("en", { sensitivity: "base", numeric: true });
 

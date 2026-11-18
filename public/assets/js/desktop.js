@@ -1,8 +1,8 @@
 // Desktop behaviour: selecting and opening icons, the clocks, desktop
 // patterns, alert boxes, and the Special menu's Restart and Shut Down.
 
-import * as wm from "./windows.mjs";
-import { openInfo, toggleFolder } from "./finder.mjs";
+import * as wm from "./windows.js";
+import { openInfo, toggleFolder } from "./finder.js";
 
 const ICONS = new URL("../icons/", import.meta.url);
 const iconUrl = (name) => new URL(`${name}.svg`, ICONS).href;

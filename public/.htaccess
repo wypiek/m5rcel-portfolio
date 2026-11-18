@@ -1,0 +1,26 @@
+# Apache. nginx ignores this file; see deploy/nginx.conf instead.
+
+DirectoryIndex index.php
+Options -Indexes
+ErrorDocument 404 /404.php
+
+AddType text/javascript .js
+AddType font/woff2 .woff2
+AddType image/svg+xml .svg
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  <FilesMatch "\.woff2$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js|svg)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+</IfModule>
+
+# Nothing in here should be a dotfile.
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>

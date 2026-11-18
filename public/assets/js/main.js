@@ -1,7 +1,7 @@
-import * as wm from "./windows.mjs";
-import { initMenus } from "./menus.mjs";
-import { initFinder, sortList, openInfo } from "./finder.mjs";
-import { initDesktop, selection, activate, alertBox, copyEmail, emptyTrash, restart, shutDown } from "./desktop.mjs";
+import * as wm from "./windows.js";
+import { initMenus } from "./menus.js";
+import { initFinder, sortList, openInfo } from "./finder.js";
+import { initDesktop, selection, activate, alertBox, copyEmail, emptyTrash, restart, shutDown } from "./desktop.js";
 
 document.documentElement.classList.add("js");
 
