@@ -1,0 +1,71 @@
+{
+  "about": "88x31 buttons from the twitter.democrat homepage, saved 2026-11-18 so they don't get lost.",
+  "buttons": [
+    {
+      "file": "twitter-democrat.webp",
+      "alt": "badge for twitter.democrat",
+      "links_to": "https://twitter.democrat/",
+      "saved_from": "https://twitter.democrat/badge.webp?v=6"
+    },
+    {
+      "file": "helium_btw.gif",
+      "alt": "i use helium btw :>",
+      "links_to": "https://helium.computer/",
+      "saved_from": "https://twitter.democrat/index_files/helium_btw.gif"
+    },
+    {
+      "file": "firefox_btw.gif",
+      "alt": "i use firefox btw :>",
+      "links_to": "https://firefox.com/",
+      "saved_from": "https://twitter.democrat/index_files/firefox_btw.gif"
+    },
+    {
+      "file": "claudemaxxing.gif",
+      "alt": "claudemaxxing…",
+      "links_to": "https://claude.ai/",
+      "saved_from": "https://twitter.democrat/index_files/claudemaxxing.gif"
+    },
+    {
+      "file": "i_heart_pond.gif",
+      "alt": "I ❤️ Pond",
+      "links_to": "https://butterfly.so/pond",
+      "saved_from": "https://twitter.democrat/index_files/i_heart_pond.gif"
+    },
+    {
+      "file": "meowcord.gif",
+      "alt": "meowcord",
+      "links_to": "https://github.com/meowcorded/meowcord",
+      "saved_from": "https://twitter.democrat/index_files/meowcord.gif"
+    },
+    {
+      "file": "xitter.gif",
+      "alt": "Xitter",
+      "links_to": "https://xitter.space/",
+      "saved_from": "https://twitter.democrat/index_files/xitter.gif"
+    },
+    {
+      "file": "php_beloved.gif",
+      "alt": "PHP my beloved",
+      "links_to": "https://php.net/",
+      "saved_from": "https://twitter.democrat/index_files/php_beloved.gif"
+    },
+    {
+      "file": "eu_domain.gif",
+      "alt": "not official EU domain! owned by m5rcel – european-commission-europa.eu",
+      "links_to": "https://european-commission-europa.eu/",
+      "saved_from": "https://twitter.democrat/index_files/eu_domain.gif"
+    },
+    {
+      "file": "z1xus.gif",
+      "alt": "z1x.us",
+      "links_to": "https://z1x.us",
+      "saved_from": "https://twitter.democrat/index_files/z1xus.gif"
+    },
+    {
+      "file": "opsex-best.png",
+      "alt": "opsex.best",
+      "links_to": "https://opsex.best",
+      "saved_from": "https://opsex.best/mebadge.png"
+    }
+  ]
+}
